@@ -34,6 +34,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 if has('nvim')
   Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -44,6 +46,8 @@ else
 endif
 
 call plug#end()
+
+let g:airline#extensions#tabline#enabled = 1
 
 let g:minimap_width = 10
 let g:minimap_auto_start = 1
@@ -65,6 +69,8 @@ nnoremap <C-l> <C-w>l
 "nnoremap <¬> <C-W>L
 
 autocmd vimenter * ++nested colorscheme gruvbox
+autocmd vimenter * NERDTree
+autocmd vimenter * wincmd p
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
